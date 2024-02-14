@@ -1,0 +1,30 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Incident Input</title>
+    <script>
+        function addInput() {
+            const container = document.getElementById("inputs");
+            const div = document.createElement("div");
+            div.innerHTML = `
+                <for="description">Incident Description:</label><br>
+                <input type="text" id="description" name="description"><br>
+                <label for="incident_node">Incident Node:</label><br>
+                <input type="text" id="incident_node" name="incident_node"><br><br>
+            `;
+            container.appendChild(div);
+        }
+        
+    </script>
+</head>
+<body>
+    <form action="/result" method="post">
+        <div id="inputs"></div>
+        <input type="button" onclick="addInput()" value="Add Incident">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
